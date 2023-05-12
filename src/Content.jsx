@@ -28,16 +28,27 @@ export function Content() {
       image_url: "https://i.imgur.com/OuFTfqc.jpg",
     },
     
+
   ]);
 
+
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
     
   return (
     <div>
       <PostsNew />
       <PostsIndex posts={posts} />
-      <Modal show={true}>
-        <p>I AM HERE</p>
+      
+      <button onClick={toggleModal}>Show modal</button>
+      <Modal show={showModal} onClose={toggleModal} >
+        <p>I AM HERE 🐐</p>
+        <img src="https://i.imgur.com/YF9q89S.jpg" width="350px" height="350px" alt="Picture of a  with large eyes"></img>
       </Modal>
+
     </div>
 
   );
