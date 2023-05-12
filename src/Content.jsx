@@ -33,6 +33,7 @@ export function Content() {
 
 
   const [showModal, setShowModal] = useState(false);
+  const [currentPost, setCurrentPost] = useState({});
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -45,8 +46,12 @@ export function Content() {
       
       <button onClick={toggleModal}>Show modal</button>
       <Modal show={showModal} onClose={toggleModal} >
-        <p>I AM HERE 🐐</p>
+        <h3>Title: {currentPost.title}</h3>
+        <h3>🐐</h3>
         <img src="https://i.imgur.com/YF9q89S.jpg" width="350px" height="350px" alt="Picture of a  with large eyes"></img>
+        <img src={currentPost.image_url} alt="" />
+        <p>{currentPost.body}</p>
+
       </Modal>
 
     </div>
