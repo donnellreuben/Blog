@@ -1,6 +1,10 @@
+/* eslint-disable react/jsx-no-undef */
+/* eslint-disable no-undef */
 import { useState } from "react";
 import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
+import { Modal } from "./Modal";
+
 
 export function Content() {
 
@@ -23,12 +27,17 @@ export function Content() {
       body: "Shooting Guard for the Boston Celtics",
       image_url: "https://i.imgur.com/OuFTfqc.jpg",
     },
+    
   ]);
 
+    
   return (
     <div>
       <PostsNew />
       <PostsIndex posts={posts} />
+      <Modal show={true}>
+        <p>I AM HERE</p>
+      </Modal>
     </div>
 
   );
